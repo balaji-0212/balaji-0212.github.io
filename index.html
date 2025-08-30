@@ -121,12 +121,12 @@
 
     /* Certificates */
     .doc-link {
-      display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; 
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px;
       background: var(--card); border: 1px solid var(--border); text-decoration: none; color: var(--text);
       transition: transform .15s ease, border-color .2s ease;
     }
     .doc-link:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
-    .doc-link img { width: 22px; height: 22px; object-fit: contain; }
+    .doc-icon { width: 20px; height: 20px; }
 
     /* Contact */
     .contact a { text-decoration: none; color: white; }
@@ -149,12 +149,6 @@
       font-weight: 700;
     }
 
-    /* Small screens */
-    @media (max-width: 640px) {
-      .hero .wrap { grid-template-columns: 1fr; text-align: center; }
-      .btns { justify-content: center; }
-    }
-
     /* Timeline (Journey) */
     .timeline { margin-top: 18px; display: block; }
     .timeline-entry { display: flex; gap: 18px; align-items: flex-start; padding: 12px 0; }
@@ -167,6 +161,12 @@
       .timeline-entry { flex-direction: column; }
       .te-time { text-align: left; min-width: auto; }
     }
+
+    /* Small screens */
+    @media (max-width: 640px) {
+      .hero .wrap { grid-template-columns: 1fr; text-align: center; }
+      .btns { justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -178,6 +178,7 @@
     <div class="links">
       <a href="#about">About</a>
       <a href="#journey">Journey</a>
+      <a href="#skills">Skills</a>
       <a href="#certificates">Certificates</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -214,7 +215,7 @@
   </div>
 </section>
 
-<!-- Journey -->
+<!-- Journey / Timeline -->
 <section id="journey" class="reveal">
   <div class="container">
     <h2>Journey</h2>
@@ -232,8 +233,8 @@
         <div class="te-time">Feb 2025 – May 2025</div>
         <div class="te-content card">
           <h3>Fault Tolerance Techniques (Systolic Arrays)</h3>
-          <p>Project report and paper focused on Light ABFT + Hamming/Parity codes to detect & correct errors in systolic arrays (matrix multiplication accelerator).</p>
-          <p><em>Paper presented at ICCCNT 2025 (IIT Indore).</em></p>
+          <p>Project & paper focused on ABFT + Hamming/Parity codes to detect & correct errors in systolic arrays.</p>
+          <p><em>Presented at ICCCNT 2025 (IIT Indore).</em></p>
         </div>
       </div>
 
@@ -260,13 +261,38 @@
           <p>Data cleaning, exploratory analysis, ML model prototyping & workflow automation.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="timeline-entry">
-        <div class="te-time">Jun – Jul 2025</div>
-        <div class="te-content card">
-          <h3>Virtual Job Simulations & Certifications</h3>
-          <p>Completed Forage simulations: Software Engineering, Quantitative Research, GenAI, Data Analytics; plus Cisco Data Analytics essentials and Python certificates.</p>
-        </div>
+<!-- Skills -->
+<section id="skills" class="reveal">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Programming</h3>
+        <p>Java, Python, SQL, C</p>
+      </div>
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript, React, Node.js</p>
+      </div>
+      <div class="card">
+        <h3>Data & AI</h3>
+        <p>Pandas, NumPy, Matplotlib, Machine Learning, Deep Learning</p>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <p>Git, GitHub, VS Code, Jupyter Notebook</p>
+      </div>
+      <div class="card">
+        <h3>Databases</h3>
+        <p>MySQL, MongoDB</p>
+      </div>
+      <div class="card">
+        <h3>Other</h3>
+        <p>IoT Systems, Embedded C, Problem Solving</p>
       </div>
     </div>
   </div>
@@ -276,31 +302,30 @@
 <section id="certificates" class="reveal">
   <div class="container">
     <h2>Certificates</h2>
-
     <div class="grid grid-2">
       <a class="doc-link" href="certificates/Software_Engineering_Job_Simulation_Certificate.pdf" target="_blank">
-        <img src="icons/software.png" alt="Software Eng"> Software Engineering Job Simulation
+        <img class="doc-icon" src="icons/software.png" alt=""> Software Engineering Job Simulation
       </a>
       <a class="doc-link" href="certificates/Balaji_S_16th_ICCCNT_2025.pdf" target="_blank">
-        <img src="icons/conference.png" alt="Conference"> 16th ICCCNT 2025 Conference
+        <img class="doc-icon" src="icons/conference.png" alt=""> 16th ICCCNT 2025 Conference
       </a>
       <a class="doc-link" href="certificates/Data_Analytics_Essentials_Certificate.pdf" target="_blank">
-        <img src="icons/cisco.png" alt="Cisco"> Data Analytics Essentials
+        <img class="doc-icon" src="icons/cisco.png" alt=""> Data Analytics Essentials
       </a>
       <a class="doc-link" href="certificates/Deloitte_Certificate.pdf" target="_blank">
-        <img src="icons/deloitte.png" alt="Deloitte"> Deloitte Virtual Internship
+        <img class="doc-icon" src="icons/deloitte.png" alt=""> Deloitte Virtual Internship
       </a>
       <a class="doc-link" href="certificates/Full_Stack_Certificate.pdf" target="_blank">
-        <img src="icons/fullstack.png" alt="Fullstack"> Full-Stack Development
+        <img class="doc-icon" src="icons/fullstack.png" alt=""> Full-Stack Development
       </a>
       <a class="doc-link" href="certificates/GenAI_Job_Simulation_Certificate.pdf" target="_blank">
-        <img src="icons/ai.png" alt="AI"> GenAI Job Simulation
+        <img class="doc-icon" src="icons/ai.png" alt=""> GenAI Job Simulation
       </a>
       <a class="doc-link" href="certificates/Python_Certificate.pdf" target="_blank">
-        <img src="icons/python.png" alt="Python"> Python Programming
+        <img class="doc-icon" src="icons/python.png" alt=""> Python Programming
       </a>
       <a class="doc-link" href="certificates/Quantitative_Research_Job_Simulation_Certificate.pdf" target="_blank">
-        <img src="icons/research.png" alt="Research"> Quantitative Research Job Simulation
+        <img class="doc-icon" src="icons/research.png" alt=""> Quantitative Research Job Simulation
       </a>
     </div>
   </div>
@@ -310,7 +335,6 @@
 <section id="projects" class="reveal">
   <div class="container">
     <h2>Projects</h2>
-
     <div class="grid grid-2">
       <article class="card">
         <div class="thumb">
@@ -381,7 +405,7 @@
 
 <!-- Scripts -->
 <script>
-  // Dark mode (persisted)
+  // ---- Dark mode (persisted)
   (function initTheme(){
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -396,14 +420,14 @@
     document.getElementById('mode').textContent = isDark ? '☀️' : '🌙';
   });
 
-  // Reveal on scroll
+  // ---- Reveal on scroll
   const els = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
   }, { threshold: 0.12 });
   els.forEach(el => io.observe(el));
 
-  // Back to top
+  // ---- Back to top
   const toTop = document.getElementById('toTop');
   window.addEventListener('scroll', () => {
     toTop.style.display = window.scrollY > 500 ? 'block' : 'none';
