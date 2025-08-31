@@ -1,1 +1,29 @@
+{
+  "projects": [
+    {
+      "title": "Voice Call Quality Analysis",
+      "description": "Telecom data analysis to assess QoS and enhance customer experience using ML techniques.",
+      "images": ["projects/Project1/screenshot1.jpg"],
+      "video": "projects/Project1/demo.mp4"
+    },
+    {
+      "title": "Fault Tolerance in Systolic Arrays",
+      "description": "Error detection & correction strategies to improve reliability in systolic computations.",
+      "images": ["projects/Project2/screenshot1.jpg"],
+      "video": "projects/Project2/demo.mp4"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Software Engineering Job Simulation",
+      "icon": "icon/software.png",
+      "file": "certificates/Software_Engineering_Job_Simulation_Certificate.pdf"
+    },
+    {
+      "title": "Full-Stack Development",
+      "icon": "icon/fullstack.png",
+      "file": "certificates/Full_Stack_Certificate.pdf"
+    }
+  ]
+}
 
