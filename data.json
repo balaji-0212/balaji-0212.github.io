@@ -1,29 +1,40 @@
 {
   "projects": [
     {
+      "id": "proj1",
       "title": "Voice Call Quality Analysis",
-      "description": "Telecom data analysis to assess QoS and enhance customer experience using ML techniques.",
-      "images": ["projects/Project1/screenshot1.jpg"],
-      "video": "projects/Project1/demo.mp4"
+      "desc": "EDA, QoS metrics & predictive modelling.",
+      "thumb": "projects/Project1/screenshot1.jpg",
+      "github": "https://github.com/balaji-0212/voice-call-quality",
+      "gallery": [
+        "projects/Project1/screenshot1.jpg",
+        "projects/Project1/screenshot2.jpg",
+        "projects/Project1/demo.mp4"
+      ]
     },
     {
+      "id": "proj2",
       "title": "Fault Tolerance in Systolic Arrays",
-      "description": "Error detection & correction strategies to improve reliability in systolic computations.",
-      "images": ["projects/Project2/screenshot1.jpg"],
-      "video": "projects/Project2/demo.mp4"
+      "desc": "Error detection & correction strategies (ICCCNT 2025).",
+      "thumb": "projects/Project2/screenshot1.jpg",
+      "gallery": [
+        "projects/Project2/screenshot1.jpg",
+        "projects/Project2/demo.mp4"
+      ]
     }
   ],
   "certificates": [
     {
       "title": "Software Engineering Job Simulation",
-      "icon": "icon/software.png",
+      "desc": "Skills validated",
+      "icon": "icons/software.png",
       "file": "certificates/Software_Engineering_Job_Simulation_Certificate.pdf"
     },
     {
-      "title": "Full-Stack Development",
-      "icon": "icon/fullstack.png",
-      "file": "certificates/Full_Stack_Certificate.pdf"
+      "title": "ICCCNT 2025 Paper",
+      "desc": "Fault tolerance in systolic arrays",
+      "icon": "icons/conference.png",
+      "file": "certificates/Balaji_S_16th_ICCCNT_2025.pdf"
     }
   ]
 }
-
