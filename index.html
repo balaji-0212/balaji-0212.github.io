@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Balaji S — Portfolio</title>
 
-  <!-- FAVICON -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="icons/ai.png">
 
   <!-- SEO -->
-  <meta name="description" content="Balaji S — Data Science Intern at VCodez. Java Full-Stack learner. Projects: Voice Call Quality, Fault Tolerance in Systolic Arrays, IoT Smart Meter, Video Emotion Detection.">
+  <meta name="description" content="Balaji S — Data Science Intern at VCodez. Java Full-Stack learner. Projects and Certifications.">
   <meta name="author" content="Balaji S">
   <link rel="canonical" href="https://balaji-tech.in/">
 
-  <!-- Open Graph (preview cards) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Balaji S — Portfolio">
-  <meta property="og:description" content="Data Science Intern at VCodez. Check projects, publications, certifications and skills.">
+  <meta property="og:description" content="Data Science Intern at VCodez. Projects, certifications, and skills.">
   <meta property="og:image" content="https://balaji-0212.github.io/icons/ai.png">
   <meta property="og:url" content="https://balaji-tech.in/">
   <meta property="og:type" content="website">
@@ -23,8 +23,17 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Balaji S — Portfolio">
-  <meta name="twitter:description" content="Data Science Intern at VCodez. Projects in AI/ML and IoT.">
+  <meta name="twitter:description" content="Data Science Intern at VCodez. Projects in AI/ML and Full-Stack.">
   <meta name="twitter:image" content="https://balaji-0212.github.io/icons/ai.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNG42TXLDC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZNG42TXLDC');
+  </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -32,510 +41,135 @@
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- AOS (scroll animations) -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- GLightbox (image/video lightbox) -->
+  <!-- GLightbox -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" rel="stylesheet"/>
 
   <style>
-    :root{
-      --bg:#f7fafc;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#4f46e5;
-      --accent-2:#06b6d4;
-      --glass: rgba(255,255,255,0.7);
-      --radius:14px;
-      --shadow: 0 8px 30px rgba(15,23,42,0.08);
-    }
-    .dark{
-      --bg:#071428;
-      --card:#0b1320;
-      --muted:#9aa6bd;
-      --accent:#8b5cf6;
-      --accent-2:#06b6d4;
-      --glass: rgba(255,255,255,0.02);
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
-    }
-
-    html,body{height:100%}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, "Poppins", "Segoe UI", Roboto, Arial;
-      background: linear-gradient(180deg,var(--bg), #ffffff);
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: #f7fafc;
       color: #0f1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      margin:0; padding:0;
+      margin: 0;
+      padding: 0;
     }
-
-    /* Top nav */
-    .navbar{background:transparent; padding:0.6rem 1rem; backdrop-filter: blur(6px);}
-    .nav-brand{font-weight:700; font-family:'Poppins'; letter-spacing:0.4px;}
-    .nav-link{font-weight:600; color:var(--muted) !important;}
-    .nav-link:hover{color:var(--accent) !important; transform:translateY(-2px);}
-
-    /* Hero */
-    .hero{
-      padding:64px 0;
-      background:
-        radial-gradient(800px 220px at 10% 0%, rgba(79,70,229,0.10) 0%, transparent 40%),
-        radial-gradient(600px 180px at 90% 0%, rgba(6,182,212,0.08) 0%, transparent 45%);
-    }
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
-      border-radius:18px; padding:28px; box-shadow:var(--shadow);
-      display:flex; gap:24px; align-items:center;
-      border:1px solid rgba(15,23,42,0.04);
-    }
-    .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:6px solid white; box-shadow:0 8px 30px rgba(2,6,23,0.12)}
-    .hero-title{font-family:'Poppins'; font-weight:700; font-size:28px; margin-bottom:6px;}
-    .hero-sub{color:var(--muted); margin-bottom:8px;}
-    .chip{display:inline-flex; gap:8px; align-items:center; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; padding:8px 12px; border-radius:999px; font-weight:700; font-size:0.95rem;}
-
-    /* Sections */
-    section{padding:64px 0}
-    h2{font-family:'Poppins'; font-weight:700; color:var(--accent); margin-bottom:18px;}
-
-    /* Grid cards */
-    .card-proj{border-radius:12px; overflow:hidden; border:1px solid rgba(2,6,23,0.05); box-shadow: 0 12px 30px rgba(2,6,23,0.06); transition:transform .28s ease, box-shadow .28s ease;}
-    .card-proj:hover{transform:translateY(-6px); box-shadow:0 30px 70px rgba(2,6,23,0.12)}
-    .proj-thumb{height:190px; display:block; width:100%; object-fit:cover;}
-
-    /* Certificate card */
-    .cert-item{display:flex; gap:12px; align-items:center; padding:12px; border-radius:12px; border:1px solid rgba(2,6,23,0.04); background:var(--card); transition:transform .2s}
-    .cert-item:hover{transform:translateY(-4px)}
-
-    /* Skills */
-    .skill-bar{height:12px; border-radius:999px; background: rgba(15,23,42,0.08); overflow:hidden}
-    .skill-fill{height:100%; border-radius:999px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); width:0%; transition:width 1.2s cubic-bezier(.2,.9,.2,1)}
-
-    /* Timeline */
-    .timeline{position:relative; padding-left:18px}
-    .timeline:before{content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); opacity:0.12}
-    .timeline-item{position:relative; margin:14px 0 18px 18px; padding-left:14px}
-    .timeline-marker{position:absolute; left:-12px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--card); border:3px solid var(--accent); box-shadow:0 6px 18px rgba(2,6,23,0.06)}
-
-    /* Contact pills */
-    .pill{display:inline-flex; gap:8px; align-items:center; padding:10px 14px; border-radius:999px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; font-weight:700}
-
-    /* Footer */
-    footer{padding:28px 0; text-align:center; color:var(--muted); border-top:1px solid rgba(2,6,23,0.04)}
-
-    /* Utilities */
-    .muted{color:var(--muted)}
-    .small{font-size:0.92rem}
-    .mb-8{margin-bottom:8px}
-
-    /* Responsive tweaks */
-    @media (max-width: 768px){
-      .hero-card{flex-direction:column; text-align:center}
-      .avatar{width:120px;height:120px;margin:auto}
-    }
-
-    /* Dark mode tweaks */
-    body.dark{
-      background: linear-gradient(180deg,#041226, #071428);
-      color:#dbeafe;
-    }
-    body.dark .hero-card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.02)}
-    body.dark .chip{ background:linear-gradient(90deg,#8b5cf6,#06b6d4) }
-    body.dark .cert-item{ background: #071828; border:1px solid rgba(255,255,255,0.02)}
+    h2 { font-family:'Poppins'; font-weight:700; margin-bottom:18px; color:#4f46e5; }
+    .card-proj, .cert-item { transition: transform .25s ease, box-shadow .25s ease; }
+    .card-proj:hover, .cert-item:hover { transform: translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,0.12); }
+    .proj-thumb { height:190px; width:100%; object-fit:cover; }
+    .cert-item { display:flex; gap:12px; padding:12px; border-radius:12px; background:#fff; align-items:center; border:1px solid #eee; }
+    footer { padding:20px 0; text-align:center; font-size:0.9rem; color:#6b7280; border-top:1px solid #eee; }
   </style>
 </head>
 <body>
-
   <!-- NAV -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand nav-brand" href="#">Balaji <span style="color:var(--accent);">S</span></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">☰</span>
-      </button>
-
+      <a class="navbar-brand fw-bold" href="#">Balaji <span style="color:#4f46e5;">S</span></a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">☰</button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ps-3"><button id="themeToggle" class="btn btn-sm btn-outline-secondary">🌙</button></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card" data-aos="fade-up">
-        <img class="avatar" src="images/Balaji_Photo.jpg" alt="Balaji S Photo" onerror="this.src='icons/ai.png'">
-        <div class="flex-1">
-          <div class="chip mb-8">Open to Internships • Java Full-Stack • Data Science</div>
-          <h1 class="hero-title">Hi — I’m <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text;color:transparent;font-weight:800">Balaji S</span></h1>
-          <div class="hero-sub small">Turning ideas into solutions with code & creativity. Data Science Intern at VCodez • Research in systolic arrays.</div>
-
-          <div class="mt-3">
-            <a class="btn btn-primary me-2" href="mailto:balaji022212@gmail.com">Hire Me</a>
-            <a class="btn btn-outline-secondary me-2" href="https://www.linkedin.com/in/balaji0212" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-outline-secondary" href="resume/Balaji_S_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <header class="py-5 text-center bg-light">
+    <img src="images/Balaji_Photo.jpg" alt="Balaji S" class="rounded-circle mb-3" width="140" onerror="this.src='icons/ai.png'">
+    <h1 class="fw-bold">Hi — I’m <span style="color:#4f46e5;">Balaji S</span></h1>
+    <p class="text-muted">Data Science Intern @ VCodez • Aspiring Full-Stack Developer</p>
+    <a class="btn btn-primary me-2" href="mailto:balaji022212@gmail.com">Hire Me</a>
+    <a class="btn btn-outline-secondary" href="resume/Balaji_S_Resume.pdf" target="_blank">Download Resume</a>
+  </header>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7" data-aos="fade-right">
-          <h2>About</h2>
-          <p class="muted">I’m an Electronics & Communication Engineer with practical experience and interest in <strong>Java Full-Stack</strong>, <strong>Data Science</strong>, and <strong>AI/ML</strong>. As a Data Science Intern at VCodez, I work on data pipelines, model prototyping and visualization to solve real problems.</p>
-
-          <p class="mb-2"><strong>Profile</strong></p>
-          <ul>
-            <li>📍 India · balaji-tech.in</li>
-            <li>✉️ <a href="mailto:balaji022212@gmail.com">balaji022212@gmail.com</a></li>
-            <li>🔗 <a href="https://www.linkedin.com/in/balaji0212" target="_blank">linkedin.com/in/balaji0212</a></li>
-            <li>💼 Data Science Intern — VCodez</li>
-          </ul>
-        </div>
-
-        <div class="col-lg-5" data-aos="fade-left">
-          <div class="card p-3">
-            <h5 class="mb-3">Quick Facts</h5>
-            <p class="small muted mb-2">Looking for roles in data science, full-stack, and research internships.</p>
-            <div class="d-flex gap-2 flex-wrap">
-              <span class="badge bg-light text-muted">Java</span>
-              <span class="badge bg-light text-muted">Python</span>
-              <span class="badge bg-light text-muted">ML</span>
-              <span class="badge bg-light text-muted">React (learning)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JOURNEY -->
-  <section id="journey">
-    <div class="container">
-      <h2 data-aos="fade-up">Journey</h2>
-      <div class="timeline mt-4">
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="20">
-          <div class="timeline-marker"></div>
-          <div><strong>2025</strong> — Data Science Intern at <strong>VCodez</strong></div>
-        </div>
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="60">
-          <div class="timeline-marker"></div>
-          <div><strong>2025</strong> — Published research & conference presentation (ICCCNT)</div>
-        </div>
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="timeline-marker"></div>
-          <div><strong>2023</strong> — Research on Fault Tolerance Techniques in Systolic Arrays</div>
-        </div>
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="140">
-          <div class="timeline-marker"></div>
-          <div><strong>2022</strong> — Built IoT-based Smart Energy Meter</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <h2 data-aos="fade-up">Skills</h2>
-      <div class="row g-4 mt-3">
-        <div class="col-md-6" data-aos="fade-right">
-          <div class="card p-3">
-            <h5>Programming & Backend</h5>
-            <div class="mb-2 small muted">Java · Python · Node.js · REST APIs</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="85%"></div></div>
-
-            <h5>Web & Frontend</h5>
-            <div class="mb-2 small muted">HTML · CSS · JavaScript · React</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="72%"></div></div>
-
-            <h5>Data & ML</h5>
-            <div class="mb-2 small muted">Pandas · scikit-learn · OpenCV</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="78%"></div></div>
-          </div>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-left">
-          <div class="card p-3">
-            <h5>Databases & Tools</h5>
-            <div class="mb-2 small muted">MySQL · MongoDB · Git · VSCode</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="70%"></div></div>
-
-            <h5>AI/ML Frameworks</h5>
-            <div class="mb-2 small muted">TensorFlow · Keras · PyTorch basics</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="65%"></div></div>
-
-            <h5>Other</h5>
-            <div class="mb-2 small muted">Problem solving · Research · Documentation</div>
-            <div class="skill-bar mb-3"><div class="skill-fill" data-fill="80%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section id="about" class="container py-5">
+    <h2>About</h2>
+    <p>I’m an ECE engineer passionate about <b>Java Full-Stack</b>, <b>Data Science</b>, and <b>AI/ML</b>. Currently a Data Science Intern at VCodez, working on real-world data problems.</p>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <h2 data-aos="fade-up">Projects</h2>
-
-      <div class="row g-4 mt-3">
-        <!-- Project 1 -->
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="10">
-          <div class="card-proj">
-            <img class="proj-thumb" src="projects/Project1/screenshot1.jpg" alt="Voice Call Quality" onerror="this.style.display='none'">
-            <div class="p-3">
-              <h5>Voice Call Quality Analysis</h5>
-              <p class="muted small">EDA, QoS metrics and predictive modelling to flag poor-call events.</p>
-              <div class="d-flex gap-2 mt-2">
-                <a href="https://github.com/balaji-0212/voice-call-quality" class="btn btn-sm btn-primary" target="_blank" rel="noopener">GitHub</a>
-                <a href="projects/Project1/demo.mp4" class="btn btn-sm btn-outline-secondary glightbox" data-type="video">Watch</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 (no GitHub link per your request) -->
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="40">
-          <div class="card-proj">
-            <img class="proj-thumb" src="projects/Project2/screenshot1.jpg" alt="Fault tolerance" onerror="this.style.display='none'">
-            <div class="p-3">
-              <h5>Fault Tolerance in Systolic Arrays</h5>
-              <p class="muted small">Error detection & correction strategies — published at ICCCNT 2025.</p>
-              <div class="d-flex gap-2 mt-2">
-                <a href="projects/Project2/demo.mp4" class="btn btn-sm btn-outline-secondary glightbox" data-type="video">Watch</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="70">
-          <div class="card-proj">
-            <img class="proj-thumb" src="projects/Project3/screenshot1.jpg" alt="IoT Smart Meter" onerror="this.style.display='none'">
-            <div class="p-3">
-              <h5>IoT Smart Energy Meter</h5>
-              <p class="muted small">ESP32-based meter with cloud logging & dashboards for efficiency.</p>
-              <div class="d-flex gap-2 mt-2">
-                <a href="projects/Project3/demo.mp4" class="btn btn-sm btn-outline-secondary glightbox" data-type="video">Watch</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="card-proj">
-            <img class="proj-thumb" src="projects/Project4/screenshot1.jpg" alt="Emotion detection" onerror="this.style.display='none'">
-            <div class="p-3">
-              <h5>Video Emotion Detection</h5>
-              <p class="muted small">OpenCV + CNN pipeline for near real-time emotion classification.</p>
-              <div class="d-flex gap-2 mt-2">
-                <a href="projects/Project4/demo.mp4" class="btn btn-sm btn-outline-secondary glightbox" data-type="video">Watch</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- row -->
-    </div>
+  <section id="projects" class="container py-5">
+    <h2>Projects</h2>
+    <div class="row" id="projectsGrid"></div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section id="certificates">
-    <div class="container">
-      <h2 data-aos="fade-up">Certificates</h2>
-      <div class="row g-3 mt-3">
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="20">
-          <a class="cert-item" href="certificates/Software_Engineering_Job_Simulation_Certificate.pdf" target="_blank" rel="noopener">
-            <img src="icons/software.png" width="44" height="44" alt="software">
-            <div>
-              <div><strong>Software Engineering Job Simulation</strong></div>
-              <div class="muted small">Job simulation — skills validated</div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="60">
-          <a class="cert-item" href="certificates/Balaji_S_16th_ICCCNT_2025.pdf" target="_blank" rel="noopener">
-            <img src="icons/conference.png" width="44" height="44" alt="conference">
-            <div><strong>16th ICCCNT 2025 — Paper</strong><div class="muted small">Fault tolerance in systolic arrays</div></div>
-          </a>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <a class="cert-item" href="certificates/Data_Analytics_Essentials_Certificate.pdf" target="_blank" rel="noopener">
-            <img src="icons/research.png" width="44" height="44" alt="data analytics">
-            <div><strong>Data Analytics Essentials</strong><div class="muted small">Analytics & visualization</div></div>
-          </a>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="140">
-          <a class="cert-item" href="certificates/Full_Stack_Certificate.pdf" target="_blank" rel="noopener">
-            <img src="icons/fullstack.png" width="44" height="44" alt="fullstack">
-            <div><strong>Full-Stack Development</strong><div class="muted small">Web development training</div></div>
-          </a>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="180">
-          <a class="cert-item" href="certificates/GenAI_Job_Simulation_Certificate.pdf" target="_blank" rel="noopener">
-            <img src="icons/ai.png" width="44" height="44" alt="genai">
-            <div><strong>GenAI Job Simulation</strong><div class="muted small">Generative AI workflow</div></div>
-          </a>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="220">
-          <a class="cert-item" href="certificates/Python_Certificate.pdf" target="_blank" rel="noopener">
-            <img src="icons/python.png" width="44" height="44" alt="python">
-            <div><strong>Python Programming</strong><div class="muted small">Programming fundamentals</div></div>
-          </a>
-        </div>
-      </div>
-    </div>
+  <section id="certificates" class="container py-5">
+    <h2>Certificates</h2>
+    <div class="row" id="certificatesGrid"></div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2 data-aos="fade-up">Contact</h2>
-      <div class="row align-items-center mt-3">
-        <div class="col-md-6" data-aos="fade-right">
-          <p class="muted">Reach out for internships, collaborations or hiring.</p>
-          <p><span class="pill">📧 balaji022212@gmail.com</span></p>
-          <p class="mt-3"><a class="btn btn-outline-primary" href="https://www.linkedin.com/in/balaji0212" target="_blank">LinkedIn Profile</a></p>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <!-- Simple contact form using mailto -->
-          <form id="contactForm" onsubmit="sendEmail(event)">
-            <div class="mb-2">
-              <label class="form-label small">Your name</label>
-              <input class="form-control" id="cf-name" required placeholder="Your name">
-            </div>
-            <div class="mb-2">
-              <label class="form-label small">Email</label>
-              <input class="form-control" id="cf-email" type="email" required placeholder="you@example.com">
-            </div>
-            <div class="mb-2">
-              <label class="form-label small">Message</label>
-              <textarea class="form-control" id="cf-msg" rows="3" required placeholder="Tell me about the role or project..."></textarea>
-            </div>
-            <div>
-              <button class="btn btn-primary" type="submit">Send message</button>
-            </div>
-            <div id="cf-status" class="small muted mt-2" style="display:none"></div>
-          </form>
-        </div>
-      </div>
-    </div>
+  <section id="contact" class="container py-5">
+    <h2>Contact</h2>
+    <p>Reach out for collaborations or hiring.</p>
+    <p>📧 <a href="mailto:balaji022212@gmail.com">balaji022212@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/balaji0212" target="_blank">linkedin.com/in/balaji0212</a></p>
   </section>
 
   <footer>
-    <div class="container">
-      <small>© 2025 Balaji S · Built with GitHub Pages · <a href="resume/Balaji_S_Resume.pdf" target="_blank">Resume</a></small>
-    </div>
+    © 2025 Balaji S — Portfolio
   </footer>
 
-  <!-- Back to top -->
-  <button id="toTop" title="Back to top" style="display:none; position:fixed; right:18px; bottom:18px; padding:10px 12px; border-radius:10px; border:none; background:var(--accent); color:white; box-shadow:var(--shadow)">↑</button>
-
-  <!-- External scripts -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-
   <script>
-    // Init AOS
-    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+    AOS.init();
 
-    // Init GLightbox for video links with class glightbox
-    const lightbox = GLightbox({ selector: '.glightbox' });
-
-    // Theme toggle (persist)
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      const saved = localStorage.getItem('site-theme');
-      if(saved === 'dark') document.body.classList.add('dark'), btn.textContent='☀️';
-      btn.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        const isDark = document.body.classList.contains('dark');
-        localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
-        btn.textContent = isDark ? '☀️' : '🌙';
+    // Load data.json for projects and certificates
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        renderProjects(data.projects);
+        renderCertificates(data.certificates);
       });
-    })();
 
-    // Skill bar animation when visible
-    (function(){
-      const fills = document.querySelectorAll('.skill-fill');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if(e.isIntersecting){
-            const el = e.target;
-            const val = el.getAttribute('data-fill') || '70%';
-            setTimeout(()=> el.style.width = val, 120);
-            io.unobserve(el);
-          }
-        });
-      }, {threshold:0.28});
-      fills.forEach(f => io.observe(f));
-    })();
-
-    // Rotating headline small enhancement
-    (function(){
-      const roles = [
-        "Aspiring Java Full-Stack Developer",
-        "Data Science Intern at VCodez",
-        "AI & Web Enthusiast"
-      ];
-      const el = document.getElementById('headline-rotate');
-      if(!el) return;
-      let i=0;
-      el.textContent = roles[0];
-      setInterval(()=>{ i=(i+1)%roles.length; el.textContent = roles[i]; }, 3000);
-    })();
-
-    // Contact form - mailto fallback
-    function sendEmail(e){
-      e.preventDefault();
-      const name = document.getElementById('cf-name').value.trim();
-      const email = document.getElementById('cf-email').value.trim();
-      const msg = document.getElementById('cf-msg').value.trim();
-      const status = document.getElementById('cf-status');
-      if(!name || !email || !msg){ status.style.display='block'; status.textContent='Please fill all fields.'; return; }
-      // Use mailto to open user's email client
-      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-      window.location.href = `mailto:balaji022212@gmail.com?subject=${subject}&body=${body}`;
-      status.style.display='block'; status.textContent='Opening your mail client...';
+    function renderProjects(projects){
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = projects.map(p => `
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card-proj">
+            <img src="${p.thumb}" class="proj-thumb" alt="${p.title}">
+            <div class="p-3">
+              <h5>${p.title}</h5>
+              <p class="text-muted small">${p.desc}</p>
+              <div class="d-flex gap-2">
+                ${p.github ? `<a href="${p.github}" target="_blank" class="btn btn-sm btn-primary">GitHub</a>` : ''}
+                <a href="${p.gallery[0]}" class="btn btn-sm btn-outline-secondary glightbox" data-gallery="${p.id}">Preview</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        ${p.gallery.slice(1).map(img => `<a href="${img}" class="glightbox d-none" data-gallery="${p.id}"></a>`).join('')}
+      `).join('');
+      GLightbox({ selector: '.glightbox' });
     }
 
-    // Back to top display
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      toTop.style.display = window.scrollY > 400 ? 'block' : 'none';
-    });
-    toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
-
-    // Small accessibility: keyboard focus for glightbox
-    document.addEventListener('keydown', (ev)=>{
-      if(ev.key === 'Escape') glightbox && glightbox.close();
-    });
+    function renderCertificates(certs){
+      const grid = document.getElementById('certificatesGrid');
+      grid.innerHTML = certs.map(c => `
+        <div class="col-md-6 mb-3">
+          <a href="${c.file}" class="cert-item glightbox" data-gallery="certs">
+            <img src="${c.icon}" width="44" height="44" alt="${c.title}">
+            <div>
+              <div><strong>${c.title}</strong></div>
+              <div class="text-muted small">${c.desc}</div>
+            </div>
+          </a>
+        </div>
+      `).join('');
+      GLightbox({ selector: '.glightbox' });
+    }
   </script>
-
-  <noscript>
-    <div style="padding:16px; background:#fee; color:#611; text-align:center;">
-      JavaScript is disabled — animations and video lightbox will be limited.
-    </div>
-  </noscript>
 </body>
 </html>
